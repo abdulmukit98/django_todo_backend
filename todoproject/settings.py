@@ -93,9 +93,13 @@ WSGI_APPLICATION = 'todoproject.wsgi.application'
 
 
 import dj_database_url
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a.singapore-postgres.render.com/todo_db_f3rq', conn_max_age=600, ssl_require=True)
+# }
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a.singapore-postgres.render.com/todo_db_f3rq', conn_max_age=600, ssl_require=True)
+    'default': dj_database_url.config(default='postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a/todo_db_f3rq', conn_max_age=600, ssl_require=True)
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
