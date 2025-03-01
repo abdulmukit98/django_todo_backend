@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-=3(abvge4cc5@08o*ty-!u1_41r8=zm7m^=hi840glvfql6k_5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://django-todo-app-ioxs.onrender.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "https://django-todo-app-ioxs.onrender.com"]
 
 
 ### Modify static file settings
@@ -93,12 +93,12 @@ WSGI_APPLICATION = 'todoproject.wsgi.application'
 
 
 import dj_database_url
-# DATABASES = {
-#     'default': dj_database_url.config(default='postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a.singapore-postgres.render.com/todo_db_f3rq', conn_max_age=600, ssl_require=True)
-# }
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a/todo_db_f3rq', conn_max_age=600, ssl_require=True)
+    'default': dj_database_url.config(default='postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a.singapore-postgres.render.com/todo_db_f3rq', conn_max_age=600, ssl_require=True)
 }
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a/todo_db_f3rq', conn_max_age=600, ssl_require=True)
+# }
 
 
 # Password validation
