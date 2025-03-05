@@ -5,3 +5,4 @@ gunicorn  # For running Django in production
 whitenoise  # For serving static files
 dj-database-url  # For database connection
 psycopg2-binary  # PostgreSQL database adapter
+dotenv

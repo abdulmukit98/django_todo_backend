@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+from dotenv import load_dotenv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,13 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=3(abvge4cc5@08o*ty-!u1_41r8=zm7m^=hi840glvfql6k_5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get("DEBUG") == 'True'
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "https://django-todo-app-ioxs.onrender.com"]
 
 
 ### Modify static file settings
-import os
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -84,18 +86,25 @@ WSGI_APPLICATION = 'todoproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a.singapore-postgres.render.com/todo_db_f3rq', conn_max_age=600, ssl_require=True)
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+
+# external
+# postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a.singapore-postgres.render.com/todo_db_f3rq
+#internal
+# postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a/todo_db_f3rq
+
+load_dotenv()
+
+database_url = os.environ.get("DATABASE_URL")
+DATABASES['default'] = dj_database_url.parse(database_url)
+
+
 # DATABASES = {
 #     'default': dj_database_url.config(default='postgresql://root:WeUQ1GWrfa1HK3FeyHiPeSdTFONnUJNE@dpg-cv1886l2ng1s7384rtlg-a/todo_db_f3rq', conn_max_age=600, ssl_require=True)
 # }
