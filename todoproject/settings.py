@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-=3(abvge4cc5@08o*ty-!u1_41r8=zm7m^=hi840glvfql6k_5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG") == 'True'
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "https://django-todo-app-ioxs.onrender.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "django-todo-app-ioxs.onrender.com"]
 
 
 ### Modify static file settings
