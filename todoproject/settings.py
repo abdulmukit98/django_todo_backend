@@ -153,6 +153,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOWED_ORIGINS = [
+    "https://djangotodofrontend.vercel.app",
     "http://localhost:3000",  # React frontend url
 ]
 
