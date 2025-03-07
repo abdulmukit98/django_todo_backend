@@ -157,8 +157,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React frontend url
 ]
 
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ]
 }
+
+CORS_ALLOW_ALL_ORIGINS = True
